@@ -1,0 +1,393 @@
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  height: 255px;
+  background-color: #292F36;
+}
+
+.bannerName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  max-width: 500px;
+  height: 145px;
+  background-color: #fff;
+  border-radius: 37px 37px 0px 0px;
+}
+
+.Name {
+  font-family: 'DM Serif Display', serif;
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.signup_container {
+  width: 100%;
+	max-width: 1200px;
+	height: 1450px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 2%;
+  }
+  
+  .form_container {
+	width: 1200px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: rgba(196, 158, 133, 0.4);
+	border-radius: 55px;
+	padding-top: 50px;
+	margin-top: 20px;
+  }
+  
+  .nameContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 400px;
+	height: 40px;
+	margin-bottom: 40px;
+}
+
+.signName {
+  font-family: 'DM Serif Display';
+  font-weight: 400;
+  font-size: 45px;
+  color: #292F36;
+}
+
+.inputRow {
+  display: flex;
+  justify-content: space-between;
+	width: 745px;
+}
+  
+.input {
+  outline: none;
+  border: none;
+  width: 370px;
+  border-bottom: 1px solid #292F36;
+  padding: 5px;
+  font-size: 18px;
+	font-family: 'Jost';
+	margin-top: 5px;
+  background-color: transparent;
+}
+
+.inputImg {
+  outline: none;
+  border: none;
+  width: 370px;
+  border-bottom: 1px solid #292F36;
+  padding: 5px;
+  font-size: 18px;
+	font-family: 'Jost';
+	margin-top: 5px;
+  background-color: transparent;
+  display: none;
+}
+
+.label {
+	font-family: 'Jost';
+  font-weight: 600;
+  font-size: 18px;
+  margin-right: 10px;
+  color: #333;
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+	margin-right: 30px;
+}
+  
+  .select {
+	outline: none;
+	border: none;
+	width: 400px;
+	padding: 15px;
+	border-radius: 10px;
+	background-color: #edf5f3;
+	margin: 5px 0;
+	font-size: 14px;
+  }
+  
+  .error_msg {
+	width: 370px;
+	padding: 15px;
+	margin: 5px 0;
+	font-size: 14px;
+	background-color: #f34646;
+	color: white;
+	border-radius: 5px;
+	text-align: center;
+  }
+  
+  .white_btn,
+  .green_btn {
+	border: none;
+	outline: none;
+	padding: 12px 0;
+	background-color: white;
+	border-radius: 20px;
+	width: 180px;
+	font-weight: bold;
+	font-size: 14px;
+	cursor: pointer;
+  }
+  
+  .green_btn {
+	background-color: #007bff;
+	color: white;
+	margin: 10px;
+  }
+
+  .genderLabel {
+	font-family: 'Jost';
+	font-size: 16px;
+    color: #333;
+  }
+  
+.genderContainer {
+    display: flex;
+    align-items: center;
+	margin: 20px;
+}
+
+.genderOption {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #333;
+    outline: none;
+    margin-right: 5px;
+}
+
+.genderOption:checked {
+    background-color: #c49e85;
+    border-color: #292F36;
+}
+
+
+.info {
+	font-family: 'DM Serif Display';
+	font-size: 30px;
+	font-weight: 400;
+	color: #292F36;
+}
+
+.wydzialSelect {
+	margin-bottom: 10px;
+}
+
+.kierunekSelect {
+	margin-bottom: 10px;
+}
+
+.rokSelect {
+	margin-bottom: 10px;
+}
+
+.select {
+    outline: none;
+    border: none;
+    width: 370px;
+    border-bottom: 1px solid #292F36;
+    padding: 5px;
+    font-size: 18px;
+    font-family: 'Jost';
+    margin-top: 5px;
+    background-color: transparent;
+}
+
+.select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #292F36;
+    pointer-events: none;
+}
+
+.select::-ms-expand {
+    display: none;
+}
+
+.checkboxContainer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+	margin-top: 10px;
+}
+
+.checkboxContainer input {
+    margin-right: 10px;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    border: 1px solid #333;
+    outline: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.checkboxContainer label {
+    font-family: 'Jost';
+    font-weight: 600;
+    font-size: 18px;
+    color: #333;
+}
+
+.checkboxContainer input:checked {
+    background-color: #c49e85;
+    border-color: #292f36;
+}
+
+.labelProfile {
+  font-family: 'Jost';
+  font-weight: 600;
+  font-size: 18px;
+  color: #333;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.roleLabel {
+	font-family: 'Jost';
+	font-size: 16px;
+  color: #333;
+  }
+  
+
+.roleContainer {
+  display: flex;
+  align-items: center;
+	margin: 20px;
+}
+
+.roleOption {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #333;
+    outline: none;
+    margin-right: 5px;
+}
+
+.roleOption:checked {
+    background-color: #c49e85;
+    border-color: #292F36;
+}
+
+.button {
+    align-items: center;
+    width: 210px;
+    height: 60px;
+    transform: translate(-50%, -50%);
+    background-color: #c49e85;
+    color: #fff;
+    border: none;
+    border-radius: 18px;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Jost', serif;
+    cursor: pointer;
+	margin-top: 7%;
+	margin-left: 17%;
+    z-index: 1;
+    transition: background-color 0.3s;
+  }
+
+  .button:hover {
+    background-color: #86A397;
+  }  
+
+  .vector {
+    width: 17px; 
+    height: 15px; 
+    margin-left: 15px; 
+    fill: #c49e85; 
+    stroke: #292F36; 
+    transition: fill 0.3s, stroke 0.3s;
+  }
+
+  .button:hover .vector {
+    fill: #86A397; 
+    stroke: #292F36;
+  }
+
+  @media (max-width: 1250px) {
+    .banner {
+      width: 1200px;
+    }
+
+    .bannerName {
+      height: 100px;
+      margin-right: 12px;
+    }
+  
+    .Name {
+      font-size: 40px;
+    }
+
+    .signup_container {
+      height: auto;
+    }
+  
+    .form_container {
+      margin-left: 27px;
+      width: 1150px;
+      border-radius: 0;
+      border-radius: 55px;
+    }
+  
+    .nameContainer {
+      margin-bottom: 20px;
+    }
+  
+    .inputRow {
+      align-items: center;
+      flex-direction: column; 
+      width: 90%;
+    }
+  
+    .inputContainer {
+      margin-right: 0;
+      margin-bottom: 15px;
+    }
+  
+    .select {
+      width: 100%;
+    }
+  
+    .error_msg {
+      width: 100%;
+    }
+  
+    .genderContainer,
+    .roleContainer {
+      margin: 10px 0;
+    }
+  
+    .button {
+      margin-left: 220px;
+    }
+  }
+
+
+

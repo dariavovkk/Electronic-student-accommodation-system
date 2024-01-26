@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+  }
+  .light {
+    background-color: #ffffff;
+    color: #292F36;
+  }
+  
+  .dark {
+    background-color: #333333;
+    color: #ffffff;
+  }
+
+  .light .navItem {
+    color: #292F36;
+  }
+  
+  .dark .navItem {
+    color: #ffffff;
+  }
+  
+  .dark .navItem:hover {
+    background-color: #C49E85;
+    color: #ffffff;
+  }
+
+  .light .navbar {
+    background-color: #ffffff;
+    color: #292F36;
+  }
+
+  .dark .navbar {
+    background-color: #333333;
+    color: #ffffff;
+  }
+
+  .light .logo {
+    filter: invert(0%);
+  }
+  
+  .dark .logo {
+    filter: invert(100%);
+  }
+
+  .themeToggle {
+    font-size: 20px; 
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .themeToggle:hover {
+    color: #C49E85;
+  }
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #ffffff;
+    align-items: center;
+    padding: 10px;
+    font-family: 'Jost', sans-serif;
+    margin: 0 30px; 
+  }
+
+  .logoContainer {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    
+  }
+  
+  .logo {
+    width: 150px;
+    height: auto;
+  }
+  
+  .navItem {
+    color: #292F36;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 18px;
+    margin-left: 20px;
+    width: 100px;
+    text-align: center;
+  }
+  
+  .navItem:hover {
+    background-color: #C49E85;
+  }
+
+  .menuIcon {
+    display: none;
+}
+
+.logoImage {
+  width: 100px;
+  height: auto;
+}
+
+
+@media (max-width: 769px) {
+  .menuIcon {
+    display: flex;
+    cursor: pointer;
+    font-size: 20px;
+    order: 3;
+  }
+
+  .navbar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+  }
+
+  .navItems {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    order: 2; 
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #ffffff;
+    padding: 10px;
+    z-index: 2;
+    align-items: center;
+    width: 25%;
+  }
+
+  .showDropdown {
+    display: flex;
+  }
+
+  .navItem {
+    color: #292F36;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 18px;
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.3s;
+    margin-right: 17px;
+  }
+
+  .navItem:hover {
+    background-color: #C49E85;
+  }
+}
+
+
+
+
+  

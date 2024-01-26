@@ -1,0 +1,151 @@
+import styles from "./styles.module.css"
+import React, { useState } from "react"
+import axios from "axios"
+import { UilFileDownloadAlt, UilFastMail, UilLocationArrow, UilBed, UilListOl } from '@iconscout/react-unicons'
+import { Link } from "react-router-dom"
+
+const Opiekun = ({ setDane, user }) => {
+    const handleProfile = async () => {
+        const token = localStorage.getItem("token")
+        if (token) {
+            try {
+                const config = {
+                    method: 'get',
+                    url: 'http://localhost:8080/api/profile',
+                    headers: { 'Content-Type': 'application/json', 'x-access-token': token }
+                }
+                const { data: res } = await axios(config)
+                setDane(res.data);
+            } catch (error) {
+                if (error.response && error.response.status >= 400 && error.response.status <= 500) {
+                    localStorage.removeItem("token")
+                    window.location.reload()
+                }
+            }
+        }
+    }
+    const handleDelete = async () => {
+        const token = localStorage.getItem("token")
+        if (token) {
+            const confirmed = window.confirm("Czy na pewno chcesz usunąć konto?");
+
+            if (confirmed) {
+                try {
+                    const config = {
+                        method: 'get',
+                        url: 'http://localhost:8080/api/profile/delete',
+                        headers: { 'Content-Type': 'application/json', 'x-access-token': token }
+                    }
+                    await axios(config);
+                    localStorage.removeItem("token")
+                    window.location.reload();
+                } catch (error) {
+                    if (error.response && error.response.status >= 400 && error.response.status <= 500) {
+                        localStorage.removeItem("token")
+                        window.location.reload()
+                    }
+                }
+            }
+        }
+    }
+    //działa pobieranie informacji o pokoju studenta, należy tylko przesłać dane do strony Pokój
+    const handleRoom = async () => {
+        const token = localStorage.getItem("token")
+        if (token) {
+            try {
+                const config = {
+                    method: 'get',
+                    url: 'http://localhost:8080/api/profile/rooms',
+                    headers: { 'Content-Type': 'application/json', 'x-access-token': token }
+                }
+                const { room: res } = await axios(config)
+                //należy to odkomentować
+                //setRoom(res.room);
+            } catch (error) {
+                if (error.response && error.response.status >= 400 && error.response.status <= 500) {
+                    //localStorage.removeItem("token")
+                    window.location.reload()
+                }
+            }
+        }
+    }
+
+    const [isNavActive, setNavActive] = useState(false);
+
+    const handleToggleNav = () => {
+        setNavActive(!isNavActive);
+    };
+
+    return (
+        <div className={styles.main_container}>
+            <div className={styles.headSystem}>
+                <div className={styles.headUser}>
+                    {user && (
+                        <h3 className={styles.headUserName}>{user.first_name} {user.last_name}</h3>
+                    )}
+                </div>
+            </div>
+            <div className={styles.navContainer}>
+                <div className={styles.hamburgerIcon} onClick={handleToggleNav}>
+                    ☰
+                </div>
+                <div className={`${styles.navbar} ${isNavActive ? styles.active : ''}`}>
+                    <div className={styles.contentNav}>
+                        <Link to="/portiernia" className={styles.nonLinkText}>
+                            <button className={styles.navBtn} onClick={handleProfile}>
+                                <div className={styles.iconBack}>
+                                    <UilFileDownloadAlt className={styles.iconWniosek}/>
+                                </div>
+                                <div className={styles.iconText}>
+                                    Moje dane
+                                </div>
+                            </button>
+                        </Link>
+                        <Link to="/portiernia/studenci" className={styles.nonLinkText}>
+                            <button className={styles.navBtn} onClick={handleProfile}>
+                                <div className={styles.iconBack}>
+                                    <UilListOl className={styles.iconWniosek}/>
+                                </div>
+                                <div className={styles.iconText}>
+                                    Lista studentów
+                                </div>
+                            </button>
+                        </Link>
+                        <Link to="/portiernia/zgłoszenia" className={styles.nonLinkText}>
+                            <button className={styles.navBtn} onClick={handleProfile}>
+                                <div className={styles.iconBack}>
+                                    <UilFastMail className={styles.iconWniosek}/>
+                                </div>
+                                <div className={styles.iconText}>
+                                    Lista zgłoszeń
+                                </div>
+                            </button>
+                        </Link>
+                        <Link to="/portiernia/wymeldowania" className={styles.nonLinkText}>
+                            <button className={styles.navBtn} onClick={handleProfile}>
+                                <div className={styles.iconBack}>
+                                    <UilLocationArrow className={styles.iconWniosek}/>
+                                </div>
+                                <div className={styles.iconText}>
+                                    Wymeldowania studentów
+                                </div>
+                            </button>
+                        </Link>
+                        <Link to="/portiernia/pokoje" className={styles.nonLinkText}>
+                            {/*zmieniłem handleProfile na handleRoom w metodzie onClick*/}
+                            <button className={styles.navBtn} onClick={handleRoom}>
+                                <div className={styles.iconBack}>
+                                    <UilBed className={styles.iconWniosek}/>
+                                </div>
+                                <div className={styles.iconText}>
+                                    Pokoje
+                                </div>
+                            </button>
+                        </Link>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+export default Opiekun

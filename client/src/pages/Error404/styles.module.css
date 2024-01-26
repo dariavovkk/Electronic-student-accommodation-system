@@ -1,0 +1,117 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 95%;
+  max-width: 1560px;
+  height: 750px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 35px;
+  border-radius: 56px;
+  background-color: #292F36;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    height: 700px;
+    width: 100%;
+    max-width: 455px;
+    align-items: flex-start;
+    margin-left: 10%;
+  }
+
+  .number {
+    color: #c49e85;
+    text-align: center;
+    font-family: 'DM Serif Display';
+    font-size: 200px;
+    font-style: normal;
+    font-weight: 400;
+    margin-top: 10px;
+    margin-bottom: 0px;
+  }
+
+  .name {
+    color: #fff;
+    font-family: 'DM Serif Display';
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 400;
+    margin-top: 10px;
+  }
+
+  .button {
+    align-items: center;
+    width: 244px;
+    height: 75px;
+    background-color: #c49e85;
+    color: #fff;
+    border: none;
+    border-radius: 18px;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: 'Jost', serif;
+    cursor: pointer;
+    z-index: 1;
+    transition: background-color 0.3s;
+  }
+
+  .button:hover {
+    background-color: #86A397;
+  }  
+
+  .vector {
+    width: 17px;
+    height: 15px;
+    margin-left: 15px;
+    fill: #c49e85;
+    stroke: #292F36;
+    transition: fill 0.3s, stroke 0.3s;
+  }
+
+  .button:hover .vector {
+    fill: #86A397;
+    stroke: #292F36;
+  }
+
+  .image {
+    height: 680px;
+    width: 100%;
+    max-width: 650px;
+    margin-left: 10%;
+    margin-top: 40px;
+    border-radius: 0px 0px 0px 353px;;
+    background-image: url('./images/Banner.jpg');
+  }
+
+  .hovered .number {
+    color: #86A397;
+  }
+  
+  @media (max-width: 769px) { 
+    .container {
+      height: auto;
+    }
+    .number {
+      font-size: 120px; 
+    }
+  
+    .name {
+      font-size: 45px;
+      text-align: center;
+    }
+  
+    .button {
+      width: 244px; 
+      margin-top: 0; 
+    }
+
+    .image {
+      display: none;
+    }
+    
+    .content {
+      align-items: center;
+    }
+  }
+  
